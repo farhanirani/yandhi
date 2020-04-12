@@ -31,7 +31,15 @@ audio {
     font-size: 90%;
 }
 
-.btn:focus,.btn:active {
+button {
+    margin-right: 5px;
+}
+
+.btn:focus,.btn:active {    
     outline: none !important;
     box-shadow: none;
+}
+
+h1 {
+    padding-right: 20px;
 }
