@@ -4,10 +4,14 @@ var play = 1
 function playSong() {
   resetAll();
   audio_elements = document.body.getElementsByTagName("audio")
-  if( play == 1) {
+  if( play == 1) { //if its in play mode
+
     if (current >= audio_elements.length) {
       current = 0
+    } else if (current < 0){
+      current = 0
     }
+
     for(i=0; i < audio_elements.length; i++) {
       audio_element = audio_elements[i];
       if (i == current) {
@@ -16,13 +20,29 @@ function playSong() {
         audio_element.pause();
       }
     }
-    play = 0
-  } else {
+    play = 0 //to switch between play and pause
+  } else {   //if its in play mode
+
     for(i=0; i < audio_elements.length; i++) {
       audio_elements[i].pause();
       }
       play = 1
   }
+}
+
+
+function nextSong() {
+  resetAll();
+  current += 1;
+  play = 1
+  playSong();
+}
+
+function prevSong() {
+  resetAll();
+  current -= 1;
+  play = 1
+  playSong();
 }
 
 
