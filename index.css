@@ -31,4 +31,7 @@ audio {
     font-size: 90%;
 }
 
-
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}

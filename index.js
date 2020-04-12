@@ -1,28 +1,29 @@
 var current = 0
+var play = 1
 
 function playSong() {
   resetAll();
   audio_elements = document.body.getElementsByTagName("audio")
-  if (current >= audio_elements.length) {
-    current = 0
-  }
-  for(i=0; i < audio_elements.length; i++) {
-    audio_element = audio_elements[i];
-    if (i == current) {
-      audio_element.play();
-    } else {
-      audio_element.pause();
+  if( play == 1) {
+    if (current >= audio_elements.length) {
+      current = 0
     }
+    for(i=0; i < audio_elements.length; i++) {
+      audio_element = audio_elements[i];
+      if (i == current) {
+        audio_element.play();
+      } else {
+        audio_element.pause();
+      }
+    }
+    play = 0
+  } else {
+    for(i=0; i < audio_elements.length; i++) {
+      audio_elements[i].pause();
+      }
+      play = 1
   }
 }
-
-
-function pauseSong() {
-  audio_elements = document.body.getElementsByTagName("audio")
-  for(i=0; i < audio_elements.length; i++) {
-    audio_elements[i].pause();
-    }
-  }
 
 
 function onlyPlayOneIn(container) {
