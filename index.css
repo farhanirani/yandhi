@@ -20,9 +20,10 @@ body::-webkit-scrollbar {
 }
 
 audio {
-    width: 80%;
+    width: 98%;
     filter: invert(80%) ;
     outline: none;
+    max-width: 800px;
 }
 
 .text-center {
