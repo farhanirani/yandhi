@@ -23,7 +23,7 @@ audio {
     width: 98%;
     filter: invert(80%) ;
     outline: none;
-    max-width: 600px;
+    max-width: 750px;
 }
 
 .text-center {
