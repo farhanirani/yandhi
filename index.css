@@ -31,6 +31,10 @@ audio {
     font-size: 90%;
 }
 
+.col-3 {
+    padding-left: 20px !important;
+}
+
 button {
     margin-right: 5px;
 }
