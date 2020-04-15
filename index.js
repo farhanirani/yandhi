@@ -94,3 +94,12 @@ document.addEventListener("DOMContentLoaded", function() {
   onlyPlayOneIn(document.body);
   autoPLay(document.body);
 });
+
+
+navigator.mediaSession.setActionHandler('previoustrack', function() {
+  prevSong();
+});
+
+navigator.mediaSession.setActionHandler('nexttrack', function() {
+  nextSong();
+});
