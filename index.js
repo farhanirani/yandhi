@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
   autoPLay(document.body);
 });
 
-
+// for the phone notification
 navigator.mediaSession.setActionHandler('previoustrack', function() {
   prevSong();
 });
