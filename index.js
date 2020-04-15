@@ -1,5 +1,6 @@
 var current = 0
 var play = 1
+var titlename
 
 function playSong() {
   resetAll();
@@ -18,7 +19,7 @@ function playSong() {
       if (i == current) {
         audio_element.play();
         
-        document.getElementById("title").innerHTML = audio_titles[i].innerHTML;
+        titlename = audio_titles[i].innerHTML;
         
       } else {
         audio_element.pause();
@@ -100,23 +101,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // for the phone notification
-navigator.mediaSession.setActionHandler('previoustrack', function() {
-  prevSong();
-});
+if ('mediaSession' in navigator) {
+  navigator.mediaSession.setActionHandler('previoustrack', function() {
+    prevSong();
+  });
 
-navigator.mediaSession.setActionHandler('nexttrack', function() {
-  nextSong();
-});
+  navigator.mediaSession.setActionHandler('nexttrack', function() {
+    nextSong();
+  });
 
-navigator.mediaSession.metadata = new MediaMetadata({
-  artist: 'Kanye West',
-  album: 'YANDHI',
-  artwork: [
-    { src: 'songs/cover.png',   sizes: '96x96',   type: 'image/png' },
-    { src: 'songs/cover.png', sizes: '128x128', type: 'image/png' },
-    { src: 'songs/cover.png', sizes: '192x192', type: 'image/png' },
-    { src: 'songs/cover.png', sizes: '256x256', type: 'image/png' },
-    { src: 'songs/cover.png', sizes: '384x384', type: 'image/png' },
-    { src: 'songs/cover.png', sizes: '512x512', type: 'image/png' },
-  ]
-});
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: titlename,
+    artist: 'Kanye West',
+    album: 'YANDHI',
+    artwork: [
+      { src: 'songs/cover.png',   sizes: '96x96',   type: 'image/png' },
+      { src: 'songs/cover.png', sizes: '128x128', type: 'image/png' },
+      { src: 'songs/cover.png', sizes: '192x192', type: 'image/png' },
+      { src: 'songs/cover.png', sizes: '256x256', type: 'image/png' },
+      { src: 'songs/cover.png', sizes: '384x384', type: 'image/png' },
+      { src: 'songs/cover.png', sizes: '512x512', type: 'image/png' },
+    ]
+  });
+}
