@@ -20,6 +20,7 @@ function playSong() {
         audio_element.play();
         
         titlename = audio_titles[i].innerHTML;
+        document.title = titlename;
         
       } else {
         audio_element.pause();
