@@ -108,7 +108,7 @@ navigator.mediaSession.setActionHandler('nexttrack', function() {
 });
 
 navigator.mediaSession.metadata = new MediaMetadata({
-  // title: titlename,
+  title: titlename,
   artist: 'Kanye West',
   album: 'YANDHI',
   artwork: [
