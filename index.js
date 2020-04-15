@@ -61,6 +61,9 @@ function onlyPlayOneIn(container) {
         audio_element.pause();
       } else {
         current = i;
+        audio_titles = document.body.getElementsByClassName("col-3");
+        titlename = audio_titles[i].innerHTML;
+        document.title = titlename;
       }
     }
   }, true);
@@ -88,6 +91,9 @@ function autoPLay(container) {
         if (audio_element == event.target) {
           audio_elements[i+1].play();
           current = i+1;
+          audio_titles = document.body.getElementsByClassName("col-3");
+          titlename = audio_titles[i].innerHTML;
+          document.title = titlename;
         }
       }
     }
