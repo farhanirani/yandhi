@@ -1,6 +1,5 @@
 var current = 0
 var play = 1
-var titlename
 
 function playSong() {
   resetAll();
@@ -18,7 +17,9 @@ function playSong() {
       audio_element = audio_elements[i];
       if (i == current) {
         audio_element.play();
-        titlename = audio_titles[i];
+        
+        document.getElementById("title").innerHTML = audio_titles[i].innerHTML;
+        
       } else {
         audio_element.pause();
       }
@@ -108,7 +109,6 @@ navigator.mediaSession.setActionHandler('nexttrack', function() {
 });
 
 navigator.mediaSession.metadata = new MediaMetadata({
-  title: titlename,
   artist: 'Kanye West',
   album: 'YANDHI',
   artwork: [
