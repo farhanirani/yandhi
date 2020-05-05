@@ -101,6 +101,13 @@ function autoPLay(container) {
 }
 
 
+function ChangeVolume(currentVol) {
+  audio_elements = document.body.getElementsByTagName("audio")
+  for(i=0; i < audio_elements.length; i++) {
+    audio_elements[i].volume  = currentVol/100;
+  }
+}
+
   
 document.addEventListener("DOMContentLoaded", function() {
   onlyPlayOneIn(document.body);
