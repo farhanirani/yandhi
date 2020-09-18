@@ -113,12 +113,25 @@ function ChangeVolume(currentVol) {
   }
 }
 
+// INITIAL *****************************************
 document.addEventListener("DOMContentLoaded", function () {
   onlyPlayOneIn(document.body);
   autoPLay(document.body);
 });
 
-// for the phone notification
+document.addEventListener("keyup", (event) => {
+  if (event.code === "Space") {
+    playSong();
+  }
+});
+
+window.onkeydown = function (e) {
+  return !(e.keyCode == 32);
+};
+
+// INITIAL *****************************************
+
+// for the phone notification( puse next previous)
 if ("mediaSession" in navigator) {
   navigator.mediaSession.setActionHandler("previoustrack", function () {
     prevSong();
