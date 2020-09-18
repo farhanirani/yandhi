@@ -1,74 +1,76 @@
-*{
-	margin: 0;
-	padding: 0;
-    color: rgb(255, 255, 255);
-    font-family: 'Bungee Shade', cursive;
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-family: "Bungee Shade", cursive;
 }
 
-body{
-	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(songs/bg.jpg);
-	height: 100vh;
-	background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(songs/bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Hide scrollbar*/
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 audio {
-    width: 98%;
-    filter: invert(80%) ;
-    outline: none;
-    max-width: 750px;
+  width: 98%;
+  filter: invert(80%);
+  outline: none;
+  max-width: 750px;
 }
 
 .text-center {
-    font-family: 'Bungee Inline', cursive;
-    font-size: 90%;
+  font-family: "Bungee Inline", cursive;
+  font-size: 90%;
 }
 
 .col-3 {
-    padding-left: 20px !important;
+  padding-left: 20px !important;
 }
 
 button {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-.btn:focus,.btn:active {    
-    outline: none !important;
-    box-shadow: none;
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
 h1 {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
 audio::-webkit-media-controls-mute-button {
-    display: none !important;
+  display: none !important;
 }
 
 audio::-webkit-media-controls-volume-slider {
-    display: none !important;
+  display: none !important;
 }
 
 audio {
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 audio::-webkit-media-controls {
-    overflow: hidden !important
+  overflow: hidden !important;
 }
 audio::-webkit-media-controls-enclosure {
-    width: calc(100% + 32px);
-    margin-left: auto;
+  width: calc(100% + 32px);
+  margin-left: auto;
 }
 
 .custom-range {
-    filter: invert(85%) ;
+  filter: invert(85%);
 }
