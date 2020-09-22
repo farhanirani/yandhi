@@ -15,7 +15,7 @@
       gtag("config", "UA-158873779-2");
     </script>
 
-    <title id="title">YANDHI</title>
+    <title>YANDHI</title>
     <link rel="icon" href="songs/cover.png" />
 
     <!-- Required meta tags -->
@@ -24,20 +24,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap"
       rel="stylesheet"
     />
     <link
@@ -53,83 +41,105 @@
 
   <body>
     <br />
-    <div class="image__padding text-center">
-      <img src="songs/cover.png" style="max-width: 200px" />
+
+    <div class="album__image">
+      <img src="songs/cover.png" width="200px" />
     </div>
+
     <br />
 
-    <div class="text-center">
+    <div class="album__title">
       <h1>YANDHI</h1>
     </div>
-    <div class="row justify-content-center align-items-center">
-      <button type="button" class="btn btn-dark" onclick="prevSong()">
+
+    <div class="button__row">
+      <button type="button" class="player__buttons" onclick="prevSong()">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </button>
-      <button type="button" class="btn btn-dark" onclick="playSong()">
+      <button type="button" class="player__buttons" onclick="playSong()">
         <i class="fa fa-play" aria-hidden="true"></i>
       </button>
-      <button type="button" class="btn btn-dark" onclick="playSong()">
+      <button type="button" class="player__buttons" onclick="playSong()">
         <i class="fa fa-pause" aria-hidden="true"></i>
       </button>
-      <button type="button" class="btn btn-dark" onclick="nextSong()">
+      <button type="button" class="player__buttons" onclick="nextSong()">
         <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
 
     <br />
-    <div class="d-flex justify-content-center">
-      <form class="range-field col-md-6 col-sm-10">
-        <input
-          type="range"
-          value="100"
-          class="custom-range"
-          min="0"
-          max="100"
-          step="1"
-          oninput="ChangeVolume(this.value)"
-          onchange="ChangeVolume(this.value)"
-        />
-      </form>
+
+    <div class="now__playing">
+      <h3>Previous</h3>
+      <h3>Now playing</h3>
+      <h3>Next</h3>
     </div>
+    <div class="now__playing">
+      <h3 id="prev__track" style="color: rgb(255, 123, 248) !important">
+        Last Name
+      </h3>
+      <h3 id="curr__track" style="color: rgb(255, 123, 248) !important">
+        Saleh
+      </h3>
+      <h3 id="next__track" style="color: rgb(255, 123, 248) !important">
+        The Storm
+      </h3>
+    </div>
+
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Selah</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/01 Selah.mp3"></audio>
+    <div class="volume__control">
+      <input
+        type="range"
+        value="100"
+        class="volume__slider"
+        min="0"
+        max="100"
+        step="1"
+        oninput="ChangeVolume(this.value)"
+        onchange="ChangeVolume(this.value)"
+      />
+    </div>
+
+    <br />
+
+    <div class="song__row">
+      <div class="song__title">Selah</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/01 Selah.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">The Storm</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/02 The Storm.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">The Storm</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/02 The Storm.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">New Body</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/03 New Body.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">New Body</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/03 New Body.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Dreams</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/04 Dreams.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Dreams</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/04 Dreams.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Simulation Baptize</div>
-      <div class="col-9 text-left">
+    <div class="song__row">
+      <div class="song__title">Simulation Baptize</div>
+      <div class="song__audio">
         <audio
-          preload="metadata"
+          preload="auto"
           controls
           src="songs/05 Simulation Baptize.mp3"
         ></audio>
@@ -137,98 +147,82 @@
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Cash To Burn</div>
-      <div class="col-9 text-left">
-        <audio
-          preload="metadata"
-          controls
-          src="songs/06 Cash To Burn.mp3"
-        ></audio>
+    <div class="song__row">
+      <div class="song__title">Cash To Burn</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/06 Cash To Burn.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Bye Bye Baby</div>
-      <div class="col-9 text-left">
-        <audio
-          preload="metadata"
-          controls
-          src="songs/07 Bye Bye Baby.mp3"
-        ></audio>
+    <div class="song__row">
+      <div class="song__title">Bye Bye Baby</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/07 Bye Bye Baby.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Chakras</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/08 Chakras.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Chakras</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/08 Chakras.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Hurricane</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/09 Hurricane.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Hurricane</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/09 Hurricane.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Alien</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/10 Alien.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Alien</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/10 Alien.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Ultimate Lie</div>
-      <div class="col-9 text-left">
-        <audio
-          preload="metadata"
-          controls
-          src="songs/11 Ultimate Lie.mp3"
-        ></audio>
+    <div class="song__row">
+      <div class="song__title">Ultimate Lie</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/11 Ultimate Lie.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Sky City</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/12 Sky City.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Sky City</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/12 Sky City.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">Brothers</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/13 Brothers.mp3"></audio>
+    <div class="song__row">
+      <div class="song__title">Brothers</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/13 Brothers.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="row justify-content-center align-items-center">
-      <div class="col-3 text-center">We Got Love</div>
-      <div class="col-9 text-left">
-        <audio
-          preload="metadata"
-          controls
-          src="songs/14 We Got Love.mp3"
-        ></audio>
+    <div class="song__row">
+      <div class="song__title">We Got Love</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/14 We Got Love.mp3"></audio>
       </div>
     </div>
     <br />
 
-    <div class="lasttttt row justify-content-center align-items-center">
-      <div class="col-3 text-center">Last Name</div>
-      <div class="col-9 text-left">
-        <audio preload="metadata" controls src="songs/15 Last Name.mp3"></audio>
+    <div class="song__row" style="padding-bottom: 90px">
+      <div class="song__title">Last Name</div>
+      <div class="song__audio">
+        <audio preload="auto" controls src="songs/15 Last Name.mp3"></audio>
       </div>
     </div>
     <br />

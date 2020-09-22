@@ -5,23 +5,28 @@ var titlename;
 function playSong() {
   resetAll();
   audio_elements = document.body.getElementsByTagName("audio");
-  audio_titles = document.body.getElementsByClassName("col-3");
+  audio_titles = document.body.getElementsByClassName("song__title");
   if (play == 1) {
     //if its in play mode
 
     if (current >= audio_elements.length) {
       current = 0;
     } else if (current < 0) {
-      current = 0;
+      current = 15;
     }
 
     for (i = 0; i < audio_elements.length; i++) {
       audio_element = audio_elements[i];
       if (i == current) {
         audio_element.play();
-
-        titlename = audio_titles[i].innerHTML;
-        document.title = titlename;
+        audio_titles = document.body.getElementsByClassName("song__title");
+        document.title = audio_titles[i].innerHTML;
+        document.getElementById("prev__track").innerHTML =
+          audio_titles[getTrackNumber(i - 1)].innerHTML;
+        document.getElementById("curr__track").innerHTML =
+          audio_titles[i].innerHTML;
+        document.getElementById("next__track").innerHTML =
+          audio_titles[getTrackNumber(i + 1)].innerHTML;
       } else {
         audio_element.pause();
       }
@@ -62,9 +67,14 @@ function onlyPlayOneIn(container) {
           audio_element.pause();
         } else {
           current = i;
-          audio_titles = document.body.getElementsByClassName("col-3");
-          titlename = audio_titles[i].innerHTML;
-          document.title = titlename;
+          audio_titles = document.body.getElementsByClassName("song__title");
+          document.title = audio_titles[i].innerHTML;
+          document.getElementById("prev__track").innerHTML =
+            audio_titles[getTrackNumber(i - 1)].innerHTML;
+          document.getElementById("curr__track").innerHTML =
+            audio_titles[i].innerHTML;
+          document.getElementById("next__track").innerHTML =
+            audio_titles[getTrackNumber(i + 1)].innerHTML;
         }
       }
     },
@@ -95,9 +105,14 @@ function autoPLay(container) {
           if (audio_element == event.target) {
             audio_elements[i + 1].play();
             current = i + 1;
-            audio_titles = document.body.getElementsByClassName("col-3");
-            titlename = audio_titles[i].innerHTML;
-            document.title = titlename;
+            audio_titles = document.body.getElementsByClassName("song__title");
+            document.title = audio_titles[i].innerHTML;
+            document.getElementById("prev__track").innerHTML =
+              audio_titles[getTrackNumber(i - 1)].innerHTML;
+            document.getElementById("curr__track").innerHTML =
+              audio_titles[i].innerHTML;
+            document.getElementById("next__track").innerHTML =
+              audio_titles[getTrackNumber(i + 1)].innerHTML;
           }
         }
       }
@@ -111,6 +126,12 @@ function ChangeVolume(currentVol) {
   for (i = 0; i < audio_elements.length; i++) {
     audio_elements[i].volume = currentVol / 100;
   }
+}
+
+function getTrackNumber(i) {
+  if (i > 14) return 0;
+  else if (i < 0) return 14;
+  else return i;
 }
 
 // INITIAL *****************************************
