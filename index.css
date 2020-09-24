@@ -22,14 +22,15 @@ body {
 /* Album image */
 .album__image {
   padding-top: 30px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Album title */
 .album__title {
   font-family: "Bungee Shade", cursive;
-  text-align: center;
 }
 
 /* Control buttons */
