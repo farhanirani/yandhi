@@ -67,24 +67,30 @@
     <br />
 
     <div class="now__playing">
-      <h3>Previous</h3>
-      <h3>Now playing</h3>
-      <h3>Next</h3>
-    </div>
-    <div class="now__playing">
-      <h3 id="prev__track" style="color: rgb(0, 35, 236) !important">
-        Last Name
-      </h3>
-      <h3 id="curr__track" style="color: rgb(0, 255, 34) !important">Saleh</h3>
-      <h3 id="next__track" style="color: rgb(0, 35, 236) !important">
-        The Storm
-      </h3>
+      <div class="now__playing__inner">
+        <h3>Prev</h3>
+        <h3 id="prev__track" style="color: rgb(229, 255, 0) !important">
+          Last Name
+        </h3>
+      </div>
+      <div class="now__playing__inner">
+        <h3 style="color: rgb(1, 225, 255) !important">Now playing</h3>
+        <h1 id="curr__track" style="color: rgb(72, 255, 0)">Saleh</h1>
+      </div>
+      <div class="now__playing__inner">
+        <h3>Next</h3>
+
+        <h3 id="next__track" style="color: rgb(229, 255, 0) !important">
+          The Storm
+        </h3>
+      </div>
     </div>
 
     <br />
 
     <div class="volume__control">
       <input
+        style="-webkit-appearance: none"
         type="range"
         value="100"
         class="volume__slider"
