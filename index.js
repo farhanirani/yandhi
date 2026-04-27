@@ -106,6 +106,15 @@ function playSongAt(index) {
   loadSong(current, true);
 }
 
+function onTrackEnded() {
+  if (current >= songs.length - 1) {
+    setPlayingState(false);
+    return;
+  }
+  current += 1;
+  loadSong(current, true);
+}
+
 // ── Playlist UI ───────────────────────────────────────────────
 
 function updatePlaylistActive() {
@@ -189,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Audio events
   audio.addEventListener("play", () => setPlayingState(true));
   audio.addEventListener("pause", () => setPlayingState(false));
-  audio.addEventListener("ended", () => nextSong());
+  audio.addEventListener("ended", onTrackEnded);
 
   audio.addEventListener("timeupdate", () => {
     if (!audio.duration) return;
